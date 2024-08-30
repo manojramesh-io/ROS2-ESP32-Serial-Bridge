@@ -1,12 +1,12 @@
-# Arduino Motor Controller
+# ESP32 Motor Controller
 
-This code turns an Arduino into a motor controller!
-It provides a simple serial interface to communicate with a high-level computer (e.g. running ROS), and generates the appropriate PWM signals for a motor driver, to drive two motors.
+This code turns an esp32 into a motor controller!
+It provides a simple serial interface to communicate with a high-level computer (e.g. running ROS2), and generates the appropriate PWM signals for a motor driver, to drive two motors.
 
-This is a fork of the original code, with some changes, and removal of the ROS nodes (see [this repo](https://github.com/joshnewans/serial_motor_demo) for an alternative). Check out `README-orig.md` for the original README.
+This is a fork of the original code, with some changes, and removal of the ROS nodes (see [this repo](https://github.com/joshnewans/ros_arduino_bridge) for an alternative). 
 
 As I only have need for a subset of the functionality, I have no idea what does and doesn't work, beyond what is detailed below.
-Feedback/improvements are welcome (though no promises on how quickly I'll respond). I currently only use the L298N driver, and the Arduino encoder mode.
+Feedback/improvements are welcome (though no promises on how quickly I'll respond). I only use the Motor drivers with 1 Direction Pin(INA) and 1 PWM(ENABLE) pin and the custom encoder puls reader.
 
 
 
@@ -35,11 +35,10 @@ Some quick things to note
 - There is an auto timeout (default 2s) so you need to keep sending commands for it to keep moving
 - PID parameter order is PDI (?)
 - Motor speed is in counts per loop
-- Default baud rate 57600
+- Default baud rate 115200
 - Needs carriage return (CR)
 - Make sure serial is enabled (user in dialout group)
-- Check out the original readme for more
-
+- Check out the original through link
 
 ## TODO (maybe)
 - Document PID tuning
